@@ -22,19 +22,19 @@ var app = {
 
 		navigator.globalization.getLocaleName(
 			function (locale) {
-				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
+				app.testzone.innerHTML += "Locale: " + locale.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting locale\n';
+				app.testzone.innerHTML += "Error getting locale\n";
 			}
 		);
 		
 		navigator.globalization.getPreferredLanguage(
 			function (language) {
-				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
+				app.testzone.innerHTML += "Language: " + language.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting language\n';
+				app.testzone.innerHTML += "Error getting language\n";
 			}
 		);
     },
@@ -42,19 +42,19 @@ var app = {
     onPause: function() {
 		navigator.globalization.getLocaleName(
 			function (locale) {
-				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
+				app.testzone.innerHTML += "Locale: " + locale.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting locale\n';
+				app.testzone.innerHTML += "Error getting locale\n";
 			}
 		);
 		
 		navigator.globalization.getPreferredLanguage(
 			function (language) {
-				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
+				app.testzone.innerHTML += "Locale: " + language.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting language\n';
+				app.testzone.innerHTML += "Error getting language\n";
 			}
 		);
     },
@@ -62,19 +62,19 @@ var app = {
     onResume: function() {
 		navigator.globalization.getLocaleName(
 			function (locale) {
-				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
+				app.testzone.innerHTML += "Locale: " + locale.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting locale\n';
+				app.testzone.innerHTML += "Error getting locale\n";
 			}
 		);
 		
 		navigator.globalization.getPreferredLanguage(
 			function (language) {
-				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
+				app.testzone.innerHTML += "Locale: " + language.value + "\n";
 			},
 			function () {
-				app.testzone.innerHTML += 'Error getting language\n';
+				app.testzone.innerHTML += "Error getting language\n";
 			}
 		);
     },
