@@ -2,8 +2,8 @@ var app = {
     // Application Constructor
     initialize: function() {
         this.bindEvents();
-        /*this.testzone = {};
-        this.countDown = "";
+        this.testzone = {};
+        /*this.countDown = "";
         this.count = 0;*/
     },
 
@@ -11,6 +11,9 @@ var app = {
         document.addEventListener("deviceready", this.onDeviceReady, false);
         document.addEventListener("pause", this.onPause, false);
         document.addEventListener("resume", this.onResume, false);
+
+        document.addEventListener("resume", this.theLocaleName, false);
+        document.addEventListener("resume", this.checkLanguage, false);
     },
 
     onDeviceReady: function() {
@@ -18,17 +21,14 @@ var app = {
         //window.addEventListener("batterycritical", app.onBatteryCritical, false);
         //document.addEventListener("menubutton", app.onMenuButton, false);
         app.testzone = document.getElementById("test-zone");
-		
-		theLocaleName();
-		checkLanguage();
     },
     onPause: function() {
-		theLocaleName();
-		checkLanguage();
+		app.theLocaleName();
+		app.checkLanguage();
     },
     onResume: function() {
-		theLocaleName();
-		checkLanguage();
+		app.theLocaleName();
+		app.checkLanguage();
     },
 	
 	/************/
