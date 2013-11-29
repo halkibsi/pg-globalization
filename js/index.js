@@ -11,9 +11,6 @@ var app = {
         document.addEventListener("deviceready", this.onDeviceReady, false);
         document.addEventListener("pause", this.onPause, false);
         document.addEventListener("resume", this.onResume, false);
-
-        document.addEventListener("resume", this.theLocaleName, false);
-        document.addEventListener("resume", this.checkLanguage, false);
     },
 
     onDeviceReady: function() {
@@ -21,19 +18,8 @@ var app = {
         //window.addEventListener("batterycritical", app.onBatteryCritical, false);
         //document.addEventListener("menubutton", app.onMenuButton, false);
         app.testzone = document.getElementById("test-zone");
-    },
-    onPause: function() {
-		app.theLocaleName();
-		app.checkLanguage();
-    },
-    onResume: function() {
-		app.theLocaleName();
-		app.checkLanguage();
-    },
-	
-	/************/
-	
-	theLocaleName: function(){
+		app.testzone.innerHTML = "";
+
 		navigator.globalization.getLocaleName(
 			function (locale) {
 				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
@@ -42,10 +28,8 @@ var app = {
 				app.testzone.innerHTML += 'Error getting locale\n';
 			}
 		);
-	},
-	
-	checkLanguage: function(){
-		var language = navigator.globalization.getPreferredLanguage(
+		
+		navigator.globalization.getPreferredLanguage(
 			function (language) {
 				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
 			},
@@ -53,5 +37,48 @@ var app = {
 				app.testzone.innerHTML += 'Error getting language\n';
 			}
 		);
-	}
+    },
+	
+    onPause: function() {
+		navigator.globalization.getLocaleName(
+			function (locale) {
+				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
+			},
+			function () {
+				app.testzone.innerHTML += 'Error getting locale\n';
+			}
+		);
+		
+		navigator.globalization.getPreferredLanguage(
+			function (language) {
+				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
+			},
+			function () {
+				app.testzone.innerHTML += 'Error getting language\n';
+			}
+		);
+    },
+	
+    onResume: function() {
+		navigator.globalization.getLocaleName(
+			function (locale) {
+				app.testzone.innerHTML += 'Locale: ' + locale.value + '\n';
+			},
+			function () {
+				app.testzone.innerHTML += 'Error getting locale\n';
+			}
+		);
+		
+		navigator.globalization.getPreferredLanguage(
+			function (language) {
+				app.testzone.innerHTML += 'Locale: ' + language.value + '\n';
+			},
+			function () {
+				app.testzone.innerHTML += 'Error getting language\n';
+			}
+		);
+    },
+	
+	/************/
+	
 };
